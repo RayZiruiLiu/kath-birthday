@@ -15,13 +15,9 @@ function shufflePhotos<T>(items: T[]): T[] {
 const albumPhotos = shufflePhotos(photos)
 
 const pageVariants = {
-  initial: (direction: number) => direction < 0
-    ? { rotateY: 78, opacity: 0.88, transformOrigin: 'right center', zIndex: 2 }
-    : { rotateY: 0, opacity: 1, transformOrigin: 'left center', zIndex: 0 },
-  animate: (direction: number) => ({ rotateY: 0, opacity: 1, zIndex: direction < 0 ? 2 : 0 }),
-  exit: (direction: number) => direction > 0
-    ? { rotateY: -78, opacity: 0.88, transformOrigin: 'left center', zIndex: 2 }
-    : { rotateY: 0, opacity: 1, zIndex: 0 },
+  initial: (direction: number) => ({ x: direction * 170, rotate: direction * 1.2, opacity: 0.45, zIndex: 1 }),
+  animate: { x: 0, rotate: 0, opacity: 1, zIndex: 1 },
+  exit: (direction: number) => ({ x: direction * -170, rotate: direction * -1.2, opacity: 0, zIndex: 2 }),
 }
 
 function preload(src?: string) {
@@ -77,7 +73,7 @@ export function PhotoAlbum() {
                   initial={reduced ? false : 'initial'}
                   animate="animate"
                   exit={reduced ? { opacity: 0 } : 'exit'}
-                  transition={{ duration: reduced ? 0.12 : 0.58, ease: [0.36, 0, 0.2, 1] }}
+                  transition={{ duration: reduced ? 0.12 : 0.52, ease: [0.25, 0.1, 0.25, 1] }}
                   drag={count > 1 ? 'x' : false}
                   dragConstraints={{ left: 0, right: 0 }}
                   dragElastic={0.18}

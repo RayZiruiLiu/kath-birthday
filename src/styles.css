@@ -39,19 +39,19 @@ button:focus-visible{outline:2px solid #a87078;outline-offset:5px}
 @keyframes arrow-breathe{0%,100%{transform:scale(1)}42%,58%{transform:scale(1.17)}}
 .card-outer-doodle{position:absolute;color:#a68182;pointer-events:none;font-family:'Kalam',cursive;opacity:.55}.doodle-one{top:13%;left:9%;font-size:42px;transform:rotate(-20deg)}.doodle-two{right:8%;top:15%;font-size:23px;transform:rotate(18deg)}.doodle-three{right:9%;bottom:14%;font-size:35px;transform:rotate(22deg)}
 .falling-photos{position:absolute;inset:0;z-index:5;overflow:hidden;pointer-events:none}
-.falling-track{position:absolute;left:var(--left);top:-125px;width:var(--width);animation:fall var(--duration) cubic-bezier(.42,.03,.78,.98) var(--delay) infinite;will-change:transform}
-.falling-sway{animation:paper-sway var(--duration) ease-in-out var(--delay) infinite}
-.falling-print{padding:4px 4px 10px;background:#fffdfa;box-shadow:0 2px 7px rgba(59,47,42,.13);animation:paper-tilt var(--duration) ease-in-out var(--delay) infinite}
+.falling-track{position:absolute;left:var(--left);top:-125px;width:var(--width);animation:fall var(--duration) linear var(--delay) infinite;will-change:transform}
+.falling-sway{animation:paper-float var(--float-duration) ease-in-out var(--float-delay) infinite}
+.falling-print{padding:4px 4px 10px;background:#fffdfa;box-shadow:0 2px 7px rgba(59,47,42,.13);animation:paper-tilt var(--rock-duration) ease-in-out var(--rock-delay) infinite}
 .falling-print img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
 @keyframes fall{from{transform:translate3d(0,-8dvh,0)}to{transform:translate3d(var(--drift),calc(100dvh + 210px),0)}}
-@keyframes paper-sway{0%,100%{transform:translate3d(0,0,0)}32%{transform:translate3d(var(--sway),0,0)}68%{transform:translate3d(calc(var(--sway) * -.6),0,0)}}
-@keyframes paper-tilt{0%{transform:rotate(var(--base-rotate))}38%{transform:rotate(calc(var(--base-rotate) + var(--tilt)))}72%{transform:rotate(calc(var(--base-rotate) - var(--tilt) * .5))}100%{transform:rotate(calc(var(--base-rotate) + var(--tilt) * .25))}}
+@keyframes paper-float{0%,100%{transform:translate3d(0,0,0)}25%{transform:translate3d(var(--sway),calc(var(--float-y) * -1),0)}50%{transform:translate3d(calc(var(--sway) * .15),var(--float-y),0)}75%{transform:translate3d(calc(var(--sway) * -.7),calc(var(--float-y) * -.5),0)}}
+@keyframes paper-tilt{0%,100%{transform:rotate(var(--base-rotate))}50%{transform:rotate(calc(var(--base-rotate) + var(--tilt)))}}
 
-/* Photo pages turn around their own edge; the edge zones remain invisible. */
+/* Photo cards move across a flat plane; the edge zones remain invisible. */
 .phase-album{display:flex;align-items:center;justify-content:center;padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right));background:#000}
 .album-stage{position:relative;width:100%;height:100%;min-height:0;display:flex;align-items:center;justify-content:center}
-.album-photo-area{position:relative;width:100%;height:100%;perspective:1200px;perspective-origin:center center}
-.album-page{position:absolute;left:50%;top:50%;translate:-50% -50%;width:max-content;max-width:calc(100% - 64px);max-height:calc(100% - 42px);display:flex;align-items:center;justify-content:center;backface-visibility:hidden;touch-action:pan-y;cursor:grab;will-change:transform}.album-page:active{cursor:grabbing}
+.album-photo-area{position:relative;width:100%;height:100%}
+.album-page{position:absolute;left:50%;top:50%;translate:-50% -50%;width:max-content;max-width:calc(100% - 64px);max-height:calc(100% - 42px);display:flex;align-items:center;justify-content:center;touch-action:pan-y;cursor:grab;will-change:transform,opacity}.album-page:active{cursor:grabbing}
 .album-photo-mat{position:relative;display:flex;align-items:center;justify-content:center;width:fit-content;max-width:100%;max-height:100%;padding:8px;background:#fffdfa;box-shadow:0 3px 20px rgba(0,0,0,.24);transform:rotate(-.3deg);isolation:isolate}
 .album-photo-mat.has-stack::before,.album-photo-mat.has-stack::after{content:'';position:absolute;inset:0;z-index:-1;background:#fffdfa;border:1px solid #d7d0c9;box-shadow:0 2px 9px rgba(0,0,0,.2);pointer-events:none}
 .album-photo-mat.has-stack::before{transform:translate(-7px,8px) rotate(-1.5deg)}
