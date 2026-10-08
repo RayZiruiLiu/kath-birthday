@@ -26,6 +26,7 @@ export function BirthdayCard({ onOpenAlbum }: Props) {
             <p>最愛小隻寶 ～～ ♡♡</p>
             <img className="kiss-face" src={`${import.meta.env.BASE_URL}kissing-face-ios.png`} alt="😚" width="160" height="160" />
           </div>
+          <time className="card-date" dateTime="2026-10-13">oct 13, 2026</time>
           <div className="card-footer">
             <span className="signature">Lzrrray <span>♡</span> Kathryyyun</span>
             <motion.button
