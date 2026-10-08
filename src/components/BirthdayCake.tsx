@@ -23,7 +23,6 @@ export function BirthdayCake({ onOpen }: Props) {
           <path className="cake-body" d="M91 249c2 40 2 91 1 133 42 19 195 26 237 1l2-133" />
           <path className="cake-body" d="M89 250c34 21 204 28 243-1" />
           <path className="cake-frost" d="M88 251c-2-16 11-29 32-33 48-11 146-12 195 1 18 5 27 17 18 32-10 12-22 6-29 3-8-4-14 2-17 11-4 14-8 24-20 22-10-2-12-15-16-22-4-7-9-8-16-5-10 5-14 12-25 9-12-3-13-22-25-23-10 0-10 20-23 21-14 1-16-17-28-16-10 1-16 12-29 9-10-2-14-7-17-9Z" />
-          <path className="cake-detail" d="M120 329c10 3 19 3 30 0m42 20c11 2 23 2 32-1m49-21c9 2 19 1 27-2" />
           <path className="cake-heart" d="M211 324c-8-14-25-11-25 3 0 13 16 23 25 30 9-7 25-17 25-30 0-14-17-17-25-3Z" />
           <path className="cake-line" d="M139 216v-65m71 58v-70m72 76v-64" />
           <path className="cake-line" d="M133 153h13m58-13h13m59 13h13" />

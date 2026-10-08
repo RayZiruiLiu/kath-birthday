@@ -13,7 +13,7 @@ Open the URL Vite prints (usually `http://localhost:5173/`). Run `npm run build`
 
 ## Photos
 
-Put JPG, JPEG, PNG, or WEBP files in `PIC/`. The site discovers them during Vite's build. The same sorted collection appears in the falling prints and album. Rename files with numeric prefixes such as `01-first.jpg`, `02-second.jpg` to choose album order, then rebuild or let the dev server refresh. Remove a file to remove it from both phases. The originals are never modified.
+Put JPG, JPEG, PNG, or WEBP files in `PIC/`. The site discovers them during Vite's build. The same collection appears in the falling prints and album. The album shuffles the photos once on every page load, then keeps that order while you browse. Remove a file to remove it from both phases. The originals are never modified.
 
 HEIC/HEIF files need conversion to JPG, PNG, or WEBP first. The album shows a warning if any are present.
 

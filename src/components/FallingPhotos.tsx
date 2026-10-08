@@ -16,12 +16,12 @@ export function FallingPhotos() {
         const vars = {
           '--left': `${4 + r(1) * 90}%`,
           '--width': `${54 + r(2) * 36}px`,
-          '--delay': `${-r(3) * 25}s`,
-          '--duration': `${16 + r(4) * 13}s`,
-          '--drift': `${(r(5) - 0.5) * 150}px`,
-          '--sway': `${(r(6) - 0.5) * 75}px`,
-          '--start-rotate': `${(r(7) - 0.5) * 26}deg`,
-          '--end-rotate': `${(r(8) - 0.5) * 58}deg`,
+          '--delay': `${-r(3) * 22}s`,
+          '--duration': `${15 + r(4) * 7}s`,
+          '--drift': `${(r(5) - 0.5) * 42}px`,
+          '--sway': `${(r(6) - 0.5) * 18}px`,
+          '--base-rotate': `${(r(7) - 0.5) * 16}deg`,
+          '--tilt': `${(r(8) - 0.5) * 12}deg`,
         } as CSSProperties
         return (
           <div className="falling-track" style={vars} key={i}>
