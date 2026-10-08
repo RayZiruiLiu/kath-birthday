@@ -3,18 +3,6 @@ import { FallingPhotos } from './FallingPhotos'
 
 type Props = { onOpenAlbum: () => void }
 
-function KissFace() {
-  return (
-    <svg className="kiss-face" viewBox="0 0 100 100" fill="none" role="img" aria-label="Kissing face doodle">
-      <path d="M79 26c-9-13-25-19-42-14C17 18 8 37 13 57c5 21 24 32 43 27 19-5 31-25 27-44" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
-      <path d="M27 43c4-5 10-5 14-1m21-2c4-4 10-3 13 1" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-      <circle cx="27" cy="58" r="3.5" fill="currentColor" /><circle cx="72" cy="56" r="3.5" fill="currentColor" />
-      <path d="M47 57c2-2 7-3 10 0 1 3-1 4-4 5 4 2 4 6 1 9-4 2-10 0-12-3" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M86 35c4-5 9-5 12-1-1 4-6 6-12 7" stroke="#b9858b" strokeWidth="2.5" strokeLinecap="round" />
-    </svg>
-  )
-}
-
 export function BirthdayCard({ onOpenAlbum }: Props) {
   const reduced = useReducedMotion()
   return (
@@ -36,10 +24,10 @@ export function BirthdayCard({ onOpenAlbum }: Props) {
           <div className="card-message">
             <h1>小寶生日快樂！</h1>
             <p>最愛小隻寶 ～～ ♡♡</p>
-            <KissFace />
+            <img className="kiss-face" src={`${import.meta.env.BASE_URL}kissing-face-ios.png`} alt="😚" width="160" height="160" />
           </div>
           <div className="card-footer">
-            <span className="signature">LERRRAY <span>♡</span> Kathryyyun</span>
+            <span className="signature">Lzrrray <span>♡</span> Kathryyyun</span>
             <motion.button
               type="button"
               className="heart-arrow"

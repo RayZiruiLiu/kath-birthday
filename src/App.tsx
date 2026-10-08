@@ -11,7 +11,7 @@ export default function App() {
   const reduced = useReducedMotion()
 
   return (
-    <div className="app-shell">
+    <div className={`app-shell app-shell-${phase}`}>
       <AnimatePresence mode="wait">
         <motion.div
           className="phase-wrap"

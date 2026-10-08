@@ -7,7 +7,6 @@ export function BirthdayCake({ onOpen }: Props) {
 
   return (
     <main className="phase phase-cake" aria-label="Birthday cake">
-      <div className="cake-topline" aria-hidden="true">for Kath <span>♡</span></div>
       <motion.button
         className="cake-button"
         type="button"
@@ -35,10 +34,6 @@ export function BirthdayCake({ onOpen }: Props) {
           <path className="cake-small-heart" d="M334 126c-5-8-15-5-15 3 0 7 9 13 15 17 6-4 15-10 15-17 0-8-10-11-15-3Z" />
         </svg>
       </motion.button>
-      <motion.p className="cake-instruction" initial={reduced ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}>
-        Tap the cake ♡
-      </motion.p>
-      <div className="cake-bottomline" aria-hidden="true">made with love <span>·</span> one little wish</div>
     </main>
   )
 }
