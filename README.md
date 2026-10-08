@@ -21,4 +21,4 @@ For faster falling prints, optional small copies live in `public/print-thumbs/`.
 
 ## Deploy
 
-The `vite.config.ts` relative base works for a GitHub Pages project path and for Vercel. On Vercel, use the Vite preset, build command `npm run build`, and output directory `dist`. The included GitHub Pages workflow builds and publishes `dist/` after a future push to `main`; enable GitHub Pages with **GitHub Actions** as its source in the repository settings. Nothing has been pushed or deployed.
+The `vite.config.ts` relative base works for a GitHub Pages project path and for Vercel. On Vercel, use the Vite preset, build command `npm run build`, and output directory `dist`. The included GitHub Pages workflow builds and publishes `dist/` after a push to `main` once GitHub Pages is enabled with **GitHub Actions** as its source in the repository settings.
